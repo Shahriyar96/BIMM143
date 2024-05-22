@@ -1,0 +1,27 @@
+---
+title: "HW06."
+author: "Shahriyar Chamankhah"
+date: "2024-05-05"
+output: html_document
+---
+
+```{r}
+# Load bio3d package
+library(bio3d)
+
+# Define a function to analyze protein drug interactions
+analyze_protein_drug_interactions <- function(pdb_file, chain="A") {
+  pdb <- read.pdb(pdb_file)
+  pdb.chainA <- trim.pdb(pdb, chain=chain, elety="CA")
+  b_factors <- pdb.chainA$atom$b
+  plotb3(b_factors, sse=pdb.chainA, typ="l", ylab="Bfactor")
+}
+
+# List of PDB files to analyze
+pdb_files <- c("4AKE", "1AKE", "1E4Y")
+
+# Analyze each PDB file using lapply
+lapply(pdb_files, analyze_protein_drug_interactions)
+
+```
+
