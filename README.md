@@ -1,4 +1,4 @@
 # BIMM143
 
-This is my repository for my bioinformstics vourse from UC San Diego.
+This is my repository for my bioinformatics course from UC San Diego.
 
